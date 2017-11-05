@@ -20,7 +20,8 @@ LocationVotingManager
     This module exposes API to vote for particular location given the latitude and longitude details and userId. It increments the count for particular location in the database and if the count is greater than five, it marks the place as popular.
 
 Notifier
-        The notification system fetches the list of locations from the DynamoDB store and queries the list of locations which are popular and corresponding user email Ids who have voted for that locations. Email is being sent to all those emails using Java Messaging system.
+    
+    The notification system fetches the list of locations from the DynamoDB store and queries the list of locations which are popular and corresponding user email Ids who have voted for that locations. Email is being sent to all those emails using Java Messaging system.
 
 DynamoDB
 
