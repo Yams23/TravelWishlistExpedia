@@ -8,8 +8,16 @@ import techexe.expedia.utils.Utils;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * Test utils - utility methods to  fetch test data
+ */
 public class TestUtils {
 
+    /**
+     * Gets users.
+     *
+     * @return the users
+     */
     public static UserDetails getUsers() {
         UserDetails user = new UserDetails();
         user.setId(Utils.getUniqueId());
@@ -19,6 +27,15 @@ public class TestUtils {
         return user;
     }
 
+    /**
+     * Gets location.
+     *
+     * @param countryName the country name
+     * @param noOfVotes   the no of votes
+     * @param lat         the lat
+     * @param lng         the lng
+     * @return the location
+     */
     public static Location getLocation(String countryName,int noOfVotes,double lat,double lng) {
         Location loc = new Location();
         loc.setCountry(countryName);
@@ -31,6 +48,11 @@ public class TestUtils {
         return loc;
     }
 
+    /**
+     * Gets location.
+     *
+     * @return the location
+     */
     public static Location getLocation() {
         Location loc = new Location();
         loc.setCountry("Australia");
@@ -43,6 +65,11 @@ public class TestUtils {
         return loc;
     }
 
+    /**
+     * Gets wish list.
+     *
+     * @return the wish list
+     */
     public static WishList getWishList() {
         WishList wl = new WishList();
         wl.setWishListId(Utils.getUniqueId());

@@ -3,6 +3,10 @@ package techexe.expedia.locations;
 import java.util.Comparator;
 import java.util.Map;
 
+/**
+ * Comparator to compare the votes between countries to mark any as popular
+ */
+
 class CountryVotesComparator implements Comparator<Map.Entry<String, Integer>> {
 
     @Override

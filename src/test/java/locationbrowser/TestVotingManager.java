@@ -9,6 +9,9 @@ import techexe.expedia.locations.LocationVotingManager;
 import techexe.expedia.model.DynamoDBWrapper;
 import techexe.expedia.model.LatLng;
 
+/**
+ * Test cass contains test cases which will verify the APIs in TestVoting Manager interface
+ */
 public class TestVotingManager {
     private ILocationVotingManager mgr;
     private DynamoDBWrapper dyDbwrapper;

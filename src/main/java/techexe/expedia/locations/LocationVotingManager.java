@@ -11,16 +11,32 @@ import techexe.expedia.model.UserDetails;
 
 import java.util.logging.Logger;
 
+/**
+ * Location voting manager exposes APIs to vote for particular location
+ */
 public class LocationVotingManager implements ILocationVotingManager {
+
     Logger logger = Logger.getLogger(LocationVotingManager.class.getName());
     private DynamoDBWrapper dynamoDBWrapper;
 
+    /**
+     * Instantiates a new Location voting manager.
+     */
     public LocationVotingManager(){
         this.dynamoDBWrapper=new DynamoDBWrapper();
     }
+
+    /**
+     * Vote for given location by the given userId
+     * Mark location as popular if the nofVotes > 5
+     * @param locationAttributes the location attributes
+     * @param userId             the user id
+     * @throws LocationNotExistException
+     * @throws UserDoesNotExistException
+     */
     @Override
     public void voteForLocation(LatLng locationAttributes,String userId) throws LocationNotExistException, UserDoesNotExistException {
-        logger.info("Vote for location with "+locationAttributes.toString());
+        logger.info("Vote for location with attributes "+locationAttributes.toString());
         Location location = dynamoDBWrapper.getLocationByLatLng(locationAttributes);
         if(location == null){
             logger.severe("There is no location corresponding to "+ locationAttributes.toString());

@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<testsuite tests="15" failures="0" name="TestSuite" time="23.568" errors="0" skipped="0">
+<testsuite tests="20" failures="0" name="TestSuite" time="22.096" errors="0" skipped="0">
   <properties>
     <property name="java.runtime.name" value="Java(TM) SE Runtime Environment"/>
     <property name="sun.boot.library.path" value="/Library/Java/JavaVirtualMachines/jdk1.8.0_152.jdk/Contents/Home/jre/lib"/>
@@ -61,19 +61,24 @@
     <property name="sun.io.unicode.encoding" value="UnicodeBig"/>
     <property name="sun.cpu.isalist" value=""/>
   </properties>
-  <testcase classname="wishlist.TestWishListMgr" name="testCreateWishList" time="2.491"/>
-  <testcase classname="wishlist.TestWishListMgr" name="testaddToInvalidWishList" time="0.608"/>
-  <testcase classname="dynamoDB.TestDynamoDbClient" name="getUserById" time="0.408"/>
-  <testcase classname="dynamoDB.TestDynamoDbClient" name="testAmazonDynamoDBClientCreation" time="0.001"/>
+  <testcase classname="wishlist.TestWishListMgr" name="testCreateWishList" time="3.373"/>
+  <testcase classname="wishlist.TestWishListMgr" name="testaddToInvalidWishList" time="0.386"/>
+  <testcase classname="dynamoDB.TestDynamoDbClient" name="getUserById" time="0.527"/>
+  <testcase classname="dynamoDB.TestDynamoDbClient" name="testAmazonDynamoDBClientCreation" time="0.003"/>
   <testcase classname="dynamoDB.TestDynamoDbClient" name="testLocationDetailsPersistance" time="0.407"/>
-  <testcase classname="dynamoDB.TestDynamoDbClient" name="testUserDetailsPersistance" time="5.53"/>
-  <testcase classname="dynamoDB.TestDynamoDbClient" name="testWishlistDetailsPersistance" time="4.717"/>
-  <testcase classname="wishlist.TestWishListMgr" name="testaddToWishList" time="1.249"/>
-  <testcase classname="locationbrowser.TestLocationBrowser" name="testListOfLocsByCountry" time="0.647"/>
-  <testcase classname="locationbrowser.TestLocationBrowser" name="testListOfLocsByDistance" time="0.449"/>
-  <testcase classname="locationbrowser.TestLocationBrowser" name="testListOfLocsByVotes" time="0.37"/>
-  <testcase classname="wishlist.TestWishListMgr" name="testGetWishList" time="0.548"/>
-  <testcase classname="locationbrowser.TestLocationPicker" name="testGetAllGlobalLocations" time="4.801"/>
-  <testcase classname="locationbrowser.TestLocationPicker" name="testPinPoint" time="0.442"/>
-  <testcase classname="wishlist.TestWishListMgr" name="deleteWishList" time="0.9"/>
+  <testcase classname="dynamoDB.TestDynamoDbClient" name="testUserDetailsPersistance" time="0.408"/>
+  <testcase classname="dynamoDB.TestDynamoDbClient" name="testWishlistDetailsPersistance" time="4.505"/>
+  <testcase classname="wishlist.TestWishListMgr" name="testaddToWishList" time="1.286"/>
+  <testcase classname="locationbrowser.TestLocationBrowser" name="testListOfLocsByCountry" time="0.527"/>
+  <testcase classname="locationbrowser.TestLocationBrowser" name="testListOfLocsByDistance" time="0.452"/>
+  <testcase classname="locationbrowser.TestLocationBrowser" name="testListOfLocsByVotes" time="0.401"/>
+  <testcase classname="wishlist.TestWishListMgr" name="testGetWishList" time="0.411"/>
+  <testcase classname="locationbrowser.TestLocationPicker" name="testGetAllGlobalLocations" time="3.842"/>
+  <testcase classname="locationbrowser.TestLocationPicker" name="testPinPoint" time="0.449"/>
+  <testcase classname="locationbrowser.TestLocationPicker" name="testPinPointForInvalidLatLng" time="0.41"/>
+  <testcase classname="wishlist.TestWishListMgr" name="deleteWishList" time="1.022"/>
+  <testcase classname="locationbrowser.TestVotingManager" name="testVoteForInvalidLocation" time="0.615"/>
+  <testcase classname="locationbrowser.TestVotingManager" name="testVoteForInvalidUser" time="0.82"/>
+  <testcase classname="locationbrowser.TestVotingManager" name="testVoteForLocation" time="1.838"/>
+  <testcase classname="TestEmailNotifier" name="testListOfEmailIds" time="0.414"/>
 </testsuite>

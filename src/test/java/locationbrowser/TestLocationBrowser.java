@@ -10,6 +10,9 @@ import techexe.expedia.model.Location;
 
 import java.util.List;
 
+/**
+ * Test class to verify the three types of location browser
+ */
 public class TestLocationBrowser {
 
     public ILocationBrowser browser;
@@ -19,14 +22,14 @@ public class TestLocationBrowser {
     public void testListOfLocsByCountry() throws LocationNotExistException {
         browser = factory.getLocationBrowser(LocationBrowserFactory.BrowserType.COUNTRY);
         List<Location> locsByCountry = browser.getListOfLocations();
-        Assert.assertNotNull(locsByCountry, "List of locations shoould not be null");
+        Assert.assertNotNull(locsByCountry, "List of locations by country should not be null");
     }
 
     @Test(description = "Verify List of locations by most no of vote")
     public void testListOfLocsByVotes() throws LocationNotExistException {
         browser = factory.getLocationBrowser(LocationBrowserFactory.BrowserType.VOTES);
         List<Location> locsByCountry = browser.getListOfLocations();
-        Assert.assertNotNull(locsByCountry, "List of locations shoould not be null");
+        Assert.assertNotNull(locsByCountry, "List of locations  by votes should not be null");
     }
 
     @Test(description = "Verify List of locations by distance")
@@ -34,6 +37,6 @@ public class TestLocationBrowser {
         LatLng attr = new LatLng(18.43606,-66.281954);
         browser = factory.getLocationBrowser(LocationBrowserFactory.BrowserType.DISTANCE,attr);
         List<Location> locsByDistance = browser.getListOfLocations();
-        Assert.assertNotNull(locsByDistance, "List of locations shoould not be null");
+        Assert.assertNotNull(locsByDistance, "List of locations bu distance shoold not be null");
     }
 }

@@ -10,6 +10,9 @@ import techexe.expedia.model.LatLng;
 
 import java.util.List;
 
+/**
+ * Testcases to verify the APIs in LocationPicker Interface
+ */
 public class TestLocationPicker {
     private ILocationPicker locPicker;
 
