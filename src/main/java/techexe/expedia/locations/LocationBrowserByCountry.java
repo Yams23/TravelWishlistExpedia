@@ -26,9 +26,9 @@ public class LocationBrowserByCountry implements ILocationBrowser {
 
     public List<Location> getListOfLocations() throws LocationsNotExistException {
         logger.info("Fetching list of locations by most popular country");
-        getCountryByVotes();
+        Map<String,Integer> countryByVotesSorted=getCountryByVotes();
         List<Location> locationByPopularCountry = new LinkedList<>();
-        for (String country : countryByVotes.keySet()) {
+        for (String country : countryByVotesSorted.keySet()) {
             Location loc = getLocationByCountry(country);
             if (loc != null)
                 locationByPopularCountry.add(getLocationByCountry(country));
@@ -36,7 +36,7 @@ public class LocationBrowserByCountry implements ILocationBrowser {
         return locationByPopularCountry;
     }
 
-    private void getCountryByVotes() throws LocationsNotExistException {
+    private Map<String,Integer> getCountryByVotes() throws LocationsNotExistException {
         logger.info("Fetching list of countries and their respective no of votes");
 
         locations = dbWrapper.getListOfLocations();
@@ -59,8 +59,12 @@ public class LocationBrowserByCountry implements ILocationBrowser {
             countryByVotes.put(country, noOfVotes);
         }
         logger.info("Country Map by votes "+ countryList.toString());
-        Collections.sort(countryByVotes,new CountryVotesComparator());
-
+        Map<String, Integer> sortedCountryMap = countryByVotes.entrySet().stream()
+                .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
+                .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
+                        (oldValue, newValue) -> oldValue, LinkedHashMap::new));
+        logger.info("Sorted Country Map by votes "+ countryList.toString());
+        return sortedCountryMap;
     }
 
 
