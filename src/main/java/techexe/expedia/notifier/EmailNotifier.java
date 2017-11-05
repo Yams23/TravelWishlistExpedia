@@ -12,34 +12,60 @@ import javax.mail.*;
 import javax.mail.internet.*;
 import javax.activation.*;
 
+/**
+ * Email Notifier sends email to users who have voted for places which has become popular after getting more than 5 votes.
+ */
 public class EmailNotifier {
 
+    /**
+     * The Logger.
+     */
     Logger logger = Logger.getLogger(EmailNotifier.class.getName());
+
     private final String from = "expediasupport@expedia.com";
     private final String host = "expedia.mail.server";
     private DynamoDBWrapper dynamoDBWrapper;
 
+    /**
+     * Instantiates a new Email notifier.
+     */
     public EmailNotifier() {
         this.dynamoDBWrapper = new DynamoDBWrapper();
     }
 
+    /**
+     * Send email notification.
+     */
     public void sendEmailNotification() {
         logger.info("Sending Email Notification for Popular Places....");
         List<String> emailIds = getListofUserEmailIds();
+        logger.info("Sending Email Notification to email Ids - "+emailIds.toString());
         if (emailIds == null || emailIds.isEmpty()) {
             logger.info("There are no users to be notified since the emailIds list is empty/null");
         }
         emailIds.forEach(id -> sendEmail(id));
     }
 
-    private List<String> getListofUserEmailIds() {
+    /**
+     * Get List of emailIds to be notified
+     * @return
+     */
+    public List<String> getListofUserEmailIds() {
+        logger.info("Fetch the list of emails Ids from data store ");
         List<Location> locations = dynamoDBWrapper.getListOfLocations();
+        // Get Popular locations
         List<Location> popularLocations = locations.stream().filter(loc -> loc.isPopular()).collect(Collectors.toList());
         List<String> emailIds = new LinkedList<>();
+
+        //Get list of users who have voted for popular locations
         emailIds = popularLocations.stream().map(Location::getVotedBy).collect(Collectors.toList());
         return emailIds;
     }
 
+    /**
+     * Send Email
+     * @param emailId
+     */
     private void sendEmail(String emailId) {
 
         //Get the session object

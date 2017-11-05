@@ -1,0 +1,577 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+  <meta charset='utf-8'>
+  <title>TestNG reports</title>
+
+    <link type="text/css" href="testng-reports.css" rel="stylesheet" />
+    <script type="text/javascript" src="jquery-1.7.1.min.js"></script>
+    <script type="text/javascript" src="testng-reports.js"></script>
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type='text/javascript'>
+      google.load('visualization', '1', {packages:['table']});
+      google.setOnLoadCallback(drawTable);
+      var suiteTableInitFunctions = new Array();
+      var suiteTableData = new Array();
+    </script>
+    <!--
+      <script type="text/javascript" src="jquery-ui/js/jquery-ui-1.8.16.custom.min.js"></script>
+     -->
+  </head>
+
+  <body>
+    <div class="top-banner-root">
+      <span class="top-banner-title-font">Test results</span>
+      <br/>
+      <span class="top-banner-font-1">1 suite</span>
+    </div> <!-- top-banner-root -->
+    <div class="navigator-root">
+      <div class="navigator-suite-header">
+        <span>All suites</span>
+        <a href="#" class="collapse-all-link" title="Collapse/expand all the suites">
+          <img class="collapse-all-icon" src="collapseall.gif">
+          </img> <!-- collapse-all-icon -->
+        </a> <!-- collapse-all-link -->
+      </div> <!-- navigator-suite-header -->
+      <div class="suite">
+        <div class="rounded-window">
+          <div class="suite-header light-rounded-window-top">
+            <a href="#" class="navigator-link" panel-name="suite-Command_line_suite">
+              <span class="suite-name border-passed">Command line suite</span>
+            </a> <!-- navigator-link -->
+          </div> <!-- suite-header light-rounded-window-top -->
+          <div class="navigator-suite-content">
+            <div class="suite-section-title">
+              <span>Info</span>
+            </div> <!-- suite-section-title -->
+            <div class="suite-section-content">
+              <ul>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="test-xml-Command_line_suite">
+                    <span>[unset file name]</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="testlist-Command_line_suite">
+                    <span class="test-stats">1 test</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="group-Command_line_suite">
+                    <span>0 groups</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="times-Command_line_suite">
+                    <span>Times</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="reporter-Command_line_suite">
+                    <span>Reporter output</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="ignored-methods-Command_line_suite">
+                    <span>Ignored methods</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+                <li>
+                  <a href="#" class="navigator-link " panel-name="chronological-Command_line_suite">
+                    <span>Chronological view</span>
+                  </a> <!-- navigator-link  -->
+                </li>
+              </ul>
+            </div> <!-- suite-section-content -->
+            <div class="result-section">
+              <div class="suite-section-title">
+                <span>Results</span>
+              </div> <!-- suite-section-title -->
+              <div class="suite-section-content">
+                <ul>
+                  <li>
+                    <span class="method-stats">15 methods,   15 passed</span>
+                  </li>
+                  <li>
+                    <span class="method-list-title passed">Passed methods</span>
+                    <span class="show-or-hide-methods passed">
+                      <a href="#" panel-name="suite-Command_line_suite" class="hide-methods passed suite-Command_line_suite"> (hide)</a> <!-- hide-methods passed suite-Command_line_suite -->
+                      <a href="#" panel-name="suite-Command_line_suite" class="show-methods passed suite-Command_line_suite"> (show)</a> <!-- show-methods passed suite-Command_line_suite -->
+                    </span>
+                    <div class="method-list-content passed suite-Command_line_suite">
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="wishlist.TestWishListMgr" hash-for-method="deleteWishList">deleteWishList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="dynamoDB.TestDynamoDbClient" hash-for-method="getUserById">getUserById</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="dynamoDB.TestDynamoDbClient" hash-for-method="testAmazonDynamoDBClientCreation">testAmazonDynamoDBClientCreation</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="wishlist.TestWishListMgr" hash-for-method="testCreateWishList">testCreateWishList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="locationbrowser.TestLocationPicker" hash-for-method="testGetAllGlobalLocations">testGetAllGlobalLocations</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="wishlist.TestWishListMgr" hash-for-method="testGetWishList">testGetWishList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="locationbrowser.TestLocationBrowser" hash-for-method="testListOfLocsByCountry">testListOfLocsByCountry</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="locationbrowser.TestLocationBrowser" hash-for-method="testListOfLocsByDistance">testListOfLocsByDistance</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="locationbrowser.TestLocationBrowser" hash-for-method="testListOfLocsByVotes">testListOfLocsByVotes</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="dynamoDB.TestDynamoDbClient" hash-for-method="testLocationDetailsPersistance">testLocationDetailsPersistance</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="locationbrowser.TestLocationPicker" hash-for-method="testPinPoint">testPinPoint</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="dynamoDB.TestDynamoDbClient" hash-for-method="testUserDetailsPersistance">testUserDetailsPersistance</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="dynamoDB.TestDynamoDbClient" hash-for-method="testWishlistDetailsPersistance">testWishlistDetailsPersistance</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="wishlist.TestWishListMgr" hash-for-method="testaddToInvalidWishList">testaddToInvalidWishList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                      <span>
+                        <img width="3%" src="passed.png"/>
+                        <a href="#" class="method navigator-link" panel-name="suite-Command_line_suite" title="wishlist.TestWishListMgr" hash-for-method="testaddToWishList">testaddToWishList</a> <!-- method navigator-link -->
+                      </span>
+                      <br/>
+                    </div> <!-- method-list-content passed suite-Command_line_suite -->
+                  </li>
+                </ul>
+              </div> <!-- suite-section-content -->
+            </div> <!-- result-section -->
+          </div> <!-- navigator-suite-content -->
+        </div> <!-- rounded-window -->
+      </div> <!-- suite -->
+    </div> <!-- navigator-root -->
+    <div class="wrapper">
+      <div class="main-panel-root">
+        <div panel-name="suite-Command_line_suite" class="panel Command_line_suite">
+          <div class="suite-Command_line_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">dynamoDB.TestDynamoDbClient</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="getUserById">
+                  </a> <!-- getUserById -->
+                  <span class="method-name">getUserById</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testAmazonDynamoDBClientCreation">
+                  </a> <!-- testAmazonDynamoDBClientCreation -->
+                  <span class="method-name">testAmazonDynamoDBClientCreation</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testLocationDetailsPersistance">
+                  </a> <!-- testLocationDetailsPersistance -->
+                  <span class="method-name">testLocationDetailsPersistance</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testUserDetailsPersistance">
+                  </a> <!-- testUserDetailsPersistance -->
+                  <span class="method-name">testUserDetailsPersistance</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testWishlistDetailsPersistance">
+                  </a> <!-- testWishlistDetailsPersistance -->
+                  <span class="method-name">testWishlistDetailsPersistance</span>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-passed -->
+          <div class="suite-Command_line_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">locationbrowser.TestLocationBrowser</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testListOfLocsByCountry">
+                  </a> <!-- testListOfLocsByCountry -->
+                  <span class="method-name">testListOfLocsByCountry</span>
+                  <em>
+(Verify List of locations by most popular country)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testListOfLocsByDistance">
+                  </a> <!-- testListOfLocsByDistance -->
+                  <span class="method-name">testListOfLocsByDistance</span>
+                  <em>
+(Verify List of locations by distance)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testListOfLocsByVotes">
+                  </a> <!-- testListOfLocsByVotes -->
+                  <span class="method-name">testListOfLocsByVotes</span>
+                  <em>
+(Verify List of locations by most no of vote)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-passed -->
+          <div class="suite-Command_line_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">wishlist.TestWishListMgr</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="deleteWishList">
+                  </a> <!-- deleteWishList -->
+                  <span class="method-name">deleteWishList</span>
+                  <em>
+(Test case to delete wishlist)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testCreateWishList">
+                  </a> <!-- testCreateWishList -->
+                  <span class="method-name">testCreateWishList</span>
+                  <em>
+(Testcase to create new wishlist for given user)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetWishList">
+                  </a> <!-- testGetWishList -->
+                  <span class="method-name">testGetWishList</span>
+                  <em>
+(Testcase to get wishlist for a user)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testaddToInvalidWishList">
+                  </a> <!-- testaddToInvalidWishList -->
+                  <span class="method-name">testaddToInvalidWishList</span>
+                  <em>
+(Negative test case to add location to non-existing wishlist)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testaddToWishList">
+                  </a> <!-- testaddToWishList -->
+                  <span class="method-name">testaddToWishList</span>
+                  <em>
+(Test case to add location to existing wishlist)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-passed -->
+          <div class="suite-Command_line_suite-class-passed">
+            <div class="main-panel-header rounded-window-top">
+              <img src="passed.png"/>
+              <span class="class-name">locationbrowser.TestLocationPicker</span>
+            </div> <!-- main-panel-header rounded-window-top -->
+            <div class="main-panel-content rounded-window-bottom">
+              <div class="method">
+                <div class="method-content">
+                  <a name="testGetAllGlobalLocations">
+                  </a> <!-- testGetAllGlobalLocations -->
+                  <span class="method-name">testGetAllGlobalLocations</span>
+                  <em>
+(Test case to verify if all the global location details are fetched)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+              <div class="method">
+                <div class="method-content">
+                  <a name="testPinPoint">
+                  </a> <!-- testPinPoint -->
+                  <span class="method-name">testPinPoint</span>
+                  <em>
+(Test case to verify if all the global location details are fetched)                  </em>
+                </div> <!-- method-content -->
+              </div> <!-- method -->
+            </div> <!-- main-panel-content rounded-window-bottom -->
+          </div> <!-- suite-Command_line_suite-class-passed -->
+        </div> <!-- panel Command_line_suite -->
+        <div panel-name="test-xml-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <pre>
+&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;
+&lt;!DOCTYPE suite SYSTEM &quot;http://testng.org/testng-1.0.dtd&quot;&gt;
+&lt;suite verbose=&quot;0&quot; name=&quot;Command line suite&quot;&gt;
+  &lt;test name=&quot;Command line test&quot;&gt;
+    &lt;classes&gt;
+      &lt;class name=&quot;dynamoDB.TestDynamoDbClient&quot;/&gt;
+      &lt;class name=&quot;locationbrowser.TestLocationBrowser&quot;/&gt;
+      &lt;class name=&quot;locationbrowser.TestLocationPicker&quot;/&gt;
+      &lt;class name=&quot;utils.TestUtils&quot;/&gt;
+      &lt;class name=&quot;wishlist.TestWishListMgr&quot;/&gt;
+    &lt;/classes&gt;
+  &lt;/test&gt; &lt;!-- Command line test --&gt;
+&lt;/suite&gt; &lt;!-- Command line suite --&gt;
+            </pre>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="testlist-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Tests for Command line suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <ul>
+              <li>
+                <span class="test-name">Command line test (5 classes)</span>
+              </li>
+            </ul>
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="group-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Groups for Command line suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="times-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Times for Command line suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="times-div">
+              <script type="text/javascript">
+suiteTableInitFunctions.push('tableData_Command_line_suite');
+function tableData_Command_line_suite() {
+var data = new google.visualization.DataTable();
+data.addColumn('number', 'Number');
+data.addColumn('string', 'Method');
+data.addColumn('string', 'Class');
+data.addColumn('number', 'Time (ms)');
+data.addRows(15);
+data.setCell(0, 0, 0)
+data.setCell(0, 1, 'testUserDetailsPersistance')
+data.setCell(0, 2, 'dynamoDB.TestDynamoDbClient')
+data.setCell(0, 3, 5530);
+data.setCell(1, 0, 1)
+data.setCell(1, 1, 'testGetAllGlobalLocations')
+data.setCell(1, 2, 'locationbrowser.TestLocationPicker')
+data.setCell(1, 3, 4800);
+data.setCell(2, 0, 2)
+data.setCell(2, 1, 'testWishlistDetailsPersistance')
+data.setCell(2, 2, 'dynamoDB.TestDynamoDbClient')
+data.setCell(2, 3, 4719);
+data.setCell(3, 0, 3)
+data.setCell(3, 1, 'testCreateWishList')
+data.setCell(3, 2, 'wishlist.TestWishListMgr')
+data.setCell(3, 3, 2487);
+data.setCell(4, 0, 4)
+data.setCell(4, 1, 'testaddToWishList')
+data.setCell(4, 2, 'wishlist.TestWishListMgr')
+data.setCell(4, 3, 1250);
+data.setCell(5, 0, 5)
+data.setCell(5, 1, 'deleteWishList')
+data.setCell(5, 2, 'wishlist.TestWishListMgr')
+data.setCell(5, 3, 901);
+data.setCell(6, 0, 6)
+data.setCell(6, 1, 'testListOfLocsByCountry')
+data.setCell(6, 2, 'locationbrowser.TestLocationBrowser')
+data.setCell(6, 3, 647);
+data.setCell(7, 0, 7)
+data.setCell(7, 1, 'testaddToInvalidWishList')
+data.setCell(7, 2, 'wishlist.TestWishListMgr')
+data.setCell(7, 3, 613);
+data.setCell(8, 0, 8)
+data.setCell(8, 1, 'testGetWishList')
+data.setCell(8, 2, 'wishlist.TestWishListMgr')
+data.setCell(8, 3, 551);
+data.setCell(9, 0, 9)
+data.setCell(9, 1, 'testListOfLocsByDistance')
+data.setCell(9, 2, 'locationbrowser.TestLocationBrowser')
+data.setCell(9, 3, 443);
+data.setCell(10, 0, 10)
+data.setCell(10, 1, 'testPinPoint')
+data.setCell(10, 2, 'locationbrowser.TestLocationPicker')
+data.setCell(10, 3, 442);
+data.setCell(11, 0, 11)
+data.setCell(11, 1, 'getUserById')
+data.setCell(11, 2, 'dynamoDB.TestDynamoDbClient')
+data.setCell(11, 3, 407);
+data.setCell(12, 0, 12)
+data.setCell(12, 1, 'testLocationDetailsPersistance')
+data.setCell(12, 2, 'dynamoDB.TestDynamoDbClient')
+data.setCell(12, 3, 407);
+data.setCell(13, 0, 13)
+data.setCell(13, 1, 'testListOfLocsByVotes')
+data.setCell(13, 2, 'locationbrowser.TestLocationBrowser')
+data.setCell(13, 3, 372);
+data.setCell(14, 0, 14)
+data.setCell(14, 1, 'testAmazonDynamoDBClientCreation')
+data.setCell(14, 2, 'dynamoDB.TestDynamoDbClient')
+data.setCell(14, 3, 1);
+window.suiteTableData['Command_line_suite']= { tableData: data, tableDiv: 'times-div-Command_line_suite'}
+return data;
+}
+              </script>
+              <span class="suite-total-time">Total running time: 23 seconds</span>
+              <div id="times-div-Command_line_suite">
+              </div> <!-- times-div-Command_line_suite -->
+            </div> <!-- times-div -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="reporter-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Reporter output for Command line suite</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="ignored-methods-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">0 ignored methods</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+        <div panel-name="chronological-Command_line_suite" class="panel">
+          <div class="main-panel-header rounded-window-top">
+            <span class="header-content">Methods in chronological order</span>
+          </div> <!-- main-panel-header rounded-window-top -->
+          <div class="main-panel-content rounded-window-bottom">
+            <div class="chronological-class">
+              <div class="chronological-class-name">wishlist.TestWishListMgr</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testCreateWishList</span>
+                <span class="method-start">0 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testaddToInvalidWishList</span>
+                <span class="method-start">2488 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">dynamoDB.TestDynamoDbClient</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">getUserById</span>
+                <span class="method-start">3102 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testAmazonDynamoDBClientCreation</span>
+                <span class="method-start">3510 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testLocationDetailsPersistance</span>
+                <span class="method-start">3512 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testUserDetailsPersistance</span>
+                <span class="method-start">3919 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testWishlistDetailsPersistance</span>
+                <span class="method-start">9449 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">wishlist.TestWishListMgr</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testaddToWishList</span>
+                <span class="method-start">14170 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">locationbrowser.TestLocationBrowser</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testListOfLocsByCountry</span>
+                <span class="method-start">15420 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testListOfLocsByDistance</span>
+                <span class="method-start">16067 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testListOfLocsByVotes</span>
+                <span class="method-start">16511 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">wishlist.TestWishListMgr</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testGetWishList</span>
+                <span class="method-start">16884 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">locationbrowser.TestLocationPicker</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">testGetAllGlobalLocations</span>
+                <span class="method-start">17436 ms</span>
+              </div> <!-- test-method -->
+              <div class="test-method">
+                <span class="method-name">testPinPoint</span>
+                <span class="method-start">22237 ms</span>
+              </div> <!-- test-method -->
+            </div> <!-- chronological-class -->
+            <div class="chronological-class">
+              <div class="chronological-class-name">wishlist.TestWishListMgr</div> <!-- chronological-class-name -->
+              <div class="test-method">
+                <span class="method-name">deleteWishList</span>
+                <span class="method-start">22679 ms</span>
+              </div> <!-- test-method -->
+          </div> <!-- main-panel-content rounded-window-bottom -->
+        </div> <!-- panel -->
+      </div> <!-- main-panel-root -->
+    </div> <!-- wrapper -->
+  </body>
+</html>

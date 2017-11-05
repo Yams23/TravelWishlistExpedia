@@ -9,9 +9,21 @@ import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.logging.Logger;
 
+/**
+ * Read attributes from CSV file and populates in Java Object
+ */
 public class CSVFileReader {
+    static Logger logger = Logger.getLogger(CSVFileReader.class.getName());
 
+    /**
+     * Read lat long details from csv file.
+     *
+     * @param file filename
+     * @return the list of latlng details
+     * @throws IOException the io exception
+     */
     public static List<GlobalLatLngDetails> readLatLongDetailsFrom(String file) throws IOException {
         BufferedReader reader = new BufferedReader(new FileReader(file));
         // read file line by line
@@ -19,7 +31,7 @@ public class CSVFileReader {
         Scanner scanner = null;
         int index = 0;
         List<GlobalLatLngDetails> locList = new ArrayList<>();
-
+        logger.info("Reading the CSV File....");
         while ((line = reader.readLine()) != null) {
             GlobalLatLngDetails loc = null;
             try {
@@ -40,15 +52,15 @@ public class CSVFileReader {
                     else if (index == 4)
                         loc.setCountry(data);
                     else
-                        System.out.println("invalid data::" + data);
+                        logger.severe("invalid data::" + data);
                     index++;
                 }
                 index = 0;
             } catch (NumberFormatException e) {
+                logger.severe("Number Format exception thrown " + e.getLocalizedMessage());
                 break;
             }
             locList.add(loc);
-
 
 
         }

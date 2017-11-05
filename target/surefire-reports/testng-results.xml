@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testng-results skipped="0" failed="0" ignored="0" total="15" passed="15">
+  <reporter-output>
+  </reporter-output>
+  <suite name="Command line suite" duration-ms="23596" started-at="2017-11-05T06:17:25Z" finished-at="2017-11-05T06:17:49Z">
+    <groups>
+    </groups>
+    <test name="Command line test" duration-ms="23596" started-at="2017-11-05T06:17:25Z" finished-at="2017-11-05T06:17:49Z">
+      <class name="locationbrowser.TestLocationBrowser">
+        <test-method status="PASS" signature="testListOfLocsByCountry()[pri:0, instance:locationbrowser.TestLocationBrowser@53fb3dab]" name="testListOfLocsByCountry" duration-ms="647" started-at="2017-11-05T11:47:41Z" description="Verify List of locations by most popular country" finished-at="2017-11-05T11:47:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testListOfLocsByCountry -->
+        <test-method status="PASS" signature="testListOfLocsByDistance()[pri:0, instance:locationbrowser.TestLocationBrowser@53fb3dab]" name="testListOfLocsByDistance" duration-ms="443" started-at="2017-11-05T11:47:41Z" description="Verify List of locations by distance" finished-at="2017-11-05T11:47:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testListOfLocsByDistance -->
+        <test-method status="PASS" signature="testListOfLocsByVotes()[pri:0, instance:locationbrowser.TestLocationBrowser@53fb3dab]" name="testListOfLocsByVotes" duration-ms="372" started-at="2017-11-05T11:47:42Z" description="Verify List of locations by most no of vote" finished-at="2017-11-05T11:47:42Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testListOfLocsByVotes -->
+      </class> <!-- locationbrowser.TestLocationBrowser -->
+      <class name="dynamoDB.TestDynamoDbClient">
+        <test-method status="PASS" signature="getUserById()[pri:0, instance:dynamoDB.TestDynamoDbClient@4be29ed9]" name="getUserById" duration-ms="407" started-at="2017-11-05T11:47:28Z" finished-at="2017-11-05T11:47:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- getUserById -->
+        <test-method status="PASS" signature="testAmazonDynamoDBClientCreation()[pri:0, instance:dynamoDB.TestDynamoDbClient@4be29ed9]" name="testAmazonDynamoDBClientCreation" duration-ms="1" started-at="2017-11-05T11:47:29Z" finished-at="2017-11-05T11:47:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testAmazonDynamoDBClientCreation -->
+        <test-method status="PASS" signature="testLocationDetailsPersistance()[pri:0, instance:dynamoDB.TestDynamoDbClient@4be29ed9]" name="testLocationDetailsPersistance" duration-ms="407" started-at="2017-11-05T11:47:29Z" finished-at="2017-11-05T11:47:29Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testLocationDetailsPersistance -->
+        <test-method status="PASS" signature="testUserDetailsPersistance()[pri:0, instance:dynamoDB.TestDynamoDbClient@4be29ed9]" name="testUserDetailsPersistance" duration-ms="5530" started-at="2017-11-05T11:47:29Z" finished-at="2017-11-05T11:47:35Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testUserDetailsPersistance -->
+        <test-method status="PASS" signature="testWishlistDetailsPersistance()[pri:0, instance:dynamoDB.TestDynamoDbClient@4be29ed9]" name="testWishlistDetailsPersistance" duration-ms="4719" started-at="2017-11-05T11:47:35Z" finished-at="2017-11-05T11:47:39Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testWishlistDetailsPersistance -->
+      </class> <!-- dynamoDB.TestDynamoDbClient -->
+      <class name="wishlist.TestWishListMgr">
+        <test-method status="PASS" signature="testCreateWishList()[pri:0, instance:wishlist.TestWishListMgr@33065d67]" name="testCreateWishList" duration-ms="2487" started-at="2017-11-05T11:47:25Z" description="Testcase to create new wishlist for given user" finished-at="2017-11-05T11:47:28Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testCreateWishList -->
+        <test-method status="PASS" signature="testaddToInvalidWishList()[pri:0, instance:wishlist.TestWishListMgr@33065d67]" name="testaddToInvalidWishList" duration-ms="613" started-at="2017-11-05T11:47:28Z" description="Negative test case to add location to non-existing wishlist" finished-at="2017-11-05T11:47:28Z">
+          <exception class="techexe.expedia.exceptions.WishListDoesNotExistException">
+            <message>
+              <![CDATA[Wishlist for id XYZdoes not exist]]>
+            </message>
+            <full-stacktrace>
+              <![CDATA[techexe.expedia.exceptions.WishListDoesNotExistException: Wishlist for id XYZdoes not exist
+	at techexe.expedia.wishlist.WishListImpl.addToWishList(WishListImpl.java:41)
+	at wishlist.TestWishListMgr.testaddToInvalidWishList(TestWishListMgr.java:78)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:108)
+	at org.testng.internal.Invoker.invokeMethod(Invoker.java:661)
+	at org.testng.internal.Invoker.invokeTestMethod(Invoker.java:869)
+	at org.testng.internal.Invoker.invokeTestMethods(Invoker.java:1193)
+	at org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:126)
+	at org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:109)
+	at org.testng.TestRunner.privateRun(TestRunner.java:744)
+	at org.testng.TestRunner.run(TestRunner.java:602)
+	at org.testng.SuiteRunner.runTest(SuiteRunner.java:380)
+	at org.testng.SuiteRunner.runSequentially(SuiteRunner.java:375)
+	at org.testng.SuiteRunner.privateRun(SuiteRunner.java:340)
+	at org.testng.SuiteRunner.run(SuiteRunner.java:289)
+	at org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:52)
+	at org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:86)
+	at org.testng.TestNG.runSuitesSequentially(TestNG.java:1301)
+	at org.testng.TestNG.runSuitesLocally(TestNG.java:1226)
+	at org.testng.TestNG.runSuites(TestNG.java:1144)
+	at org.testng.TestNG.run(TestNG.java:1115)
+	at org.apache.maven.surefire.testng.TestNGExecutor.run(TestNGExecutor.java:77)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.executeMulti(TestNGDirectoryTestSuite.java:159)
+	at org.apache.maven.surefire.testng.TestNGDirectoryTestSuite.execute(TestNGDirectoryTestSuite.java:99)
+	at org.apache.maven.surefire.testng.TestNGProvider.invoke(TestNGProvider.java:106)
+	at sun.reflect.NativeMethodAccessorImpl.invoke0(Native Method)
+	at sun.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:62)
+	at sun.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)
+	at java.lang.reflect.Method.invoke(Method.java:498)
+	at org.apache.maven.surefire.util.ReflectionUtils.invokeMethodWithArray(ReflectionUtils.java:189)
+	at org.apache.maven.surefire.booter.ProviderFactory$ProviderProxy.invoke(ProviderFactory.java:165)
+	at org.apache.maven.surefire.booter.ProviderFactory.invokeProvider(ProviderFactory.java:85)
+	at org.apache.maven.surefire.booter.ForkedBooter.runSuitesInProcess(ForkedBooter.java:115)
+	at org.apache.maven.surefire.booter.ForkedBooter.main(ForkedBooter.java:75)
+]]>
+            </full-stacktrace>
+          </exception> <!-- techexe.expedia.exceptions.WishListDoesNotExistException -->
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testaddToInvalidWishList -->
+        <test-method status="PASS" signature="testaddToWishList()[pri:0, instance:wishlist.TestWishListMgr@33065d67]" name="testaddToWishList" duration-ms="1250" started-at="2017-11-05T11:47:39Z" description="Test case to add location to existing wishlist" depends-on-methods="wishlist.TestWishListMgr.testCreateWishList" finished-at="2017-11-05T11:47:41Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testaddToWishList -->
+        <test-method status="PASS" signature="testGetWishList()[pri:0, instance:wishlist.TestWishListMgr@33065d67]" name="testGetWishList" duration-ms="551" started-at="2017-11-05T11:47:42Z" description="Testcase to get wishlist for a user" depends-on-methods="wishlist.TestWishListMgr.testaddToWishList" finished-at="2017-11-05T11:47:43Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetWishList -->
+        <test-method status="PASS" signature="deleteWishList()[pri:0, instance:wishlist.TestWishListMgr@33065d67]" name="deleteWishList" duration-ms="901" started-at="2017-11-05T11:47:48Z" description="Test case to delete wishlist" depends-on-methods="wishlist.TestWishListMgr.testGetWishList" finished-at="2017-11-05T11:47:49Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- deleteWishList -->
+      </class> <!-- wishlist.TestWishListMgr -->
+      <class name="locationbrowser.TestLocationPicker">
+        <test-method status="PASS" signature="testGetAllGlobalLocations()[pri:0, instance:locationbrowser.TestLocationPicker@cb0755b]" name="testGetAllGlobalLocations" duration-ms="4800" started-at="2017-11-05T11:47:43Z" description="Test case to verify if all the global location details are fetched" finished-at="2017-11-05T11:47:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testGetAllGlobalLocations -->
+        <test-method status="PASS" signature="testPinPoint()[pri:0, instance:locationbrowser.TestLocationPicker@cb0755b]" name="testPinPoint" duration-ms="442" started-at="2017-11-05T11:47:48Z" description="Test case to verify if all the global location details are fetched" finished-at="2017-11-05T11:47:48Z">
+          <reporter-output>
+          </reporter-output>
+        </test-method> <!-- testPinPoint -->
+      </class> <!-- locationbrowser.TestLocationPicker -->
+    </test> <!-- Command line test -->
+  </suite> <!-- Command line suite -->
+</testng-results>

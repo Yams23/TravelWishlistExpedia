@@ -52,7 +52,8 @@ public class TestDynamoDbClient {
 
     }
 
-    @Test
+
+    // @Test
     public void loadLatLngData() throws IOException {
         DynamoDBWrapper wrp = new DynamoDBWrapper();
         List<GlobalLatLngDetails> gl = CSVFileReader.readLatLongDetailsFrom("src/main/resources/zip_city_state.csv");

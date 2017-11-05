@@ -1,6 +1,6 @@
 package techexe.expedia.locations;
 
-import techexe.expedia.exceptions.LocationsNotExistException;
+import techexe.expedia.exceptions.LocationNotExistException;
 import techexe.expedia.interfaces.ILocationBrowser;
 import techexe.expedia.model.DynamoDBWrapper;
 import techexe.expedia.model.Location;
@@ -39,9 +39,9 @@ public class LocationBrowserByCountry implements ILocationBrowser {
      * 2.Sorts the countries by votes.
      * 3.Fetches the location details in sorted order
      * @return List of popular locations by country
-     * @throws LocationsNotExistException
+     * @throws LocationNotExistException
      */
-    public List<Location> getListOfLocations() throws LocationsNotExistException {
+    public List<Location> getListOfLocations() throws LocationNotExistException {
         logger.info("Fetching list of locations by most popular country");
         Map<String, Integer> countryByVotesSorted = getCountryByVotes();
         List<Location> locationByPopularCountry = new LinkedList<>();
@@ -56,15 +56,15 @@ public class LocationBrowserByCountry implements ILocationBrowser {
     /**
      * Get List of countries and their votes in sorted order
      * @return Map of countries and their votes in sorted order
-     * @throws LocationsNotExistException
+     * @throws LocationNotExistException
      */
-    private Map<String, Integer> getCountryByVotes() throws LocationsNotExistException {
+    private Map<String, Integer> getCountryByVotes() throws LocationNotExistException {
         logger.info("Fetching list of countries and their respective no of votes");
 
         locations = dbWrapper.getListOfLocations();
         if (locations == null || locations.isEmpty()) {
             logger.severe("Locations Data is empty or null.There is data present in DynamoDB");
-            throw new LocationsNotExistException("Locations Data is empty or null.There is data present in DynamoDB");
+            throw new LocationNotExistException("Locations Data is empty or null.There is data present in DynamoDB");
         }
         List<String> countryList = locations.stream().map(Location::getCountry).collect(Collectors.toList());
         logger.info("Country List from DB Store " + countryList.toString());

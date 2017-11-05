@@ -1,5 +1,6 @@
 package techexe.expedia.locations;
 
+import techexe.expedia.exceptions.LocationNotExistException;
 import techexe.expedia.interfaces.ILocationPicker;
 import techexe.expedia.model.DynamoDBWrapper;
 import techexe.expedia.model.GlobalLatLngDetails;
@@ -40,10 +41,17 @@ public class LocationPicker implements ILocationPicker {
     /**
      * Given the latitude and longitude details,return the location details
      * @param attributes
-     * @return global location
+     * @return global
+     *
+     * location
      */
     @Override
-    public GlobalLatLngDetails pinPoint(LatLng attributes) {
-        return dynamoDBWrapper.getGlobalLocationByLatLng(attributes);
+    public GlobalLatLngDetails pinPoint(LatLng attributes) throws LocationNotExistException {
+        GlobalLatLngDetails location= dynamoDBWrapper.getGlobalLocationByLatLng(attributes);
+        if (location == null){
+            logger.severe("Location does not exist for co-ordinates"+attributes.toString());
+            throw new LocationNotExistException("Location does not exist for co-ordinates"+attributes.toString());
+        }
+        return location;
     }
 }

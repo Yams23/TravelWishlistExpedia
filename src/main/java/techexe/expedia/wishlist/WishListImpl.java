@@ -11,16 +11,33 @@ import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Logger;
 
+/**
+ * Implementation Class for all the APIs in WishListManager interface.
+ */
 public class WishListImpl implements IWishListManager {
+    /**
+     * The Logger.
+     */
     Logger logger = Logger.getLogger(WishListImpl.class.getName());
     private DynamoDBWrapper dynamoDBWrapper;
 
+    /**
+     * Instantiates a new Wish list.
+     */
     public WishListImpl() {
         this.dynamoDBWrapper = new DynamoDBWrapper();
     }
 
+    /**
+     * Create new wish list
+     * @param location      location details
+     * @param userId       the user id
+     * @param wishListName the wish list name
+     * @return
+     */
     @Override
     public WishList createWishList(Location location, String userId, String wishListName) {
+        logger.info("Creating new wish list "+wishListName);
         WishList wishlist = new WishList();
         List<String> locationIds = new ArrayList<>();
         locationIds.add(location.getLocationId());
@@ -28,6 +45,7 @@ public class WishListImpl implements IWishListManager {
         wishlist.setName(wishListName);
         wishlist.setUserId(userId);
         wishlist.setWishListId(Utils.getUniqueId());
+        logger.info("Saving Wishlist & location details in DyDB");
         dynamoDBWrapper.getMapper().save(wishlist);
         dynamoDBWrapper.getMapper().save(location);
         return wishlist;

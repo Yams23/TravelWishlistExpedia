@@ -1,5 +1,7 @@
 package techexe.expedia.interfaces;
 
+import techexe.expedia.exceptions.LocationNotExistException;
+import techexe.expedia.exceptions.UserDoesNotExistException;
 import techexe.expedia.model.LatLng;
 
 /**
@@ -13,6 +15,6 @@ public interface ILocationVotingManager {
      * @param locationAttributes the location attributes
      * @param userId             the user id
      */
-    public void voteForLocation(LatLng locationAttributes,String userId);
+    public void voteForLocation(LatLng locationAttributes,String userId) throws LocationNotExistException, UserDoesNotExistException;
 
 }
