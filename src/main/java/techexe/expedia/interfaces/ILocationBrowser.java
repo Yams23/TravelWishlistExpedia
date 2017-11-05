@@ -15,7 +15,7 @@ import java.util.List;
 public interface ILocationBrowser {
 
     /**
-     * Gets list of locations.
+     * Gets list of locations by type - votes,distance & popular country.
      *
      * @return the list of locations
      */

@@ -1,6 +1,7 @@
 package techexe.expedia.locations;
 
 import techexe.expedia.interfaces.ILocationBrowser;
+import techexe.expedia.model.LatLng;
 
 public class LocationBrowserFactory {
 
@@ -9,14 +10,14 @@ public class LocationBrowserFactory {
     public ILocationBrowser locationBrowser;
 
 
-    public ILocationBrowser getLocationBrowser(BrowserType type) {
+    public ILocationBrowser getLocationBrowser(BrowserType type, LatLng... attr) {
         switch (type) {
             case VOTES: {
                 locationBrowser = new LocationBrowserByVotes();
                 break;
             }
             case DISTANCE: {
-                locationBrowser = new LocationBrowserByDistance();
+                locationBrowser = new LocationBrowserByDistance(attr[0]);
                 break;
 
             }
