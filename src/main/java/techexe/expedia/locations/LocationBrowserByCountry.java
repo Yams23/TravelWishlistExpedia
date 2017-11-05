@@ -26,7 +26,7 @@ public class LocationBrowserByCountry implements ILocationBrowser {
 
     public List<Location> getListOfLocations() throws LocationsNotExistException {
         logger.info("Fetching list of locations by most popular country");
-        Map<String,Integer> countryByVotesSorted=getCountryByVotes();
+        Map<String, Integer> countryByVotesSorted = getCountryByVotes();
         List<Location> locationByPopularCountry = new LinkedList<>();
         for (String country : countryByVotesSorted.keySet()) {
             Location loc = getLocationByCountry(country);
@@ -36,7 +36,7 @@ public class LocationBrowserByCountry implements ILocationBrowser {
         return locationByPopularCountry;
     }
 
-    private Map<String,Integer> getCountryByVotes() throws LocationsNotExistException {
+    private Map<String, Integer> getCountryByVotes() throws LocationsNotExistException {
         logger.info("Fetching list of countries and their respective no of votes");
 
         locations = dbWrapper.getListOfLocations();
@@ -45,7 +45,7 @@ public class LocationBrowserByCountry implements ILocationBrowser {
             throw new LocationsNotExistException("Locations Data is empty or null.There is data present in DynamoDB");
         }
         List<String> countryList = locations.stream().map(Location::getCountry).collect(Collectors.toList());
-        logger.info("Country List from DB Store "+ countryList.toString());
+        logger.info("Country List from DB Store " + countryList.toString());
         if (countryList == null || countryList.isEmpty()) {
             logger.severe("No Country specific data present in the list of locations fetched");
         }
@@ -56,17 +56,21 @@ public class LocationBrowserByCountry implements ILocationBrowser {
             for (Location loc : countrySpecificLocations) {
                 noOfVotes += loc.getNoOfVotes();
             }
+            if (countryByVotes.containsKey(country)) {
+                int currVotes = countryByVotes.get(country);
+                countryByVotes.put(country, currVotes + noOfVotes);
+            }
             countryByVotes.put(country, noOfVotes);
         }
-        logger.info("Country Map by votes "+ countryList.toString());
+        logger.info("Country Map by votes " + countryList.toString());
+
         Map<String, Integer> sortedCountryMap = countryByVotes.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
-        logger.info("Sorted Country Map by votes "+ countryList.toString());
+        logger.info("Sorted Country Map by votes " + countryList.toString());
         return sortedCountryMap;
     }
-
 
 
     private Location getLocationByCountry(String country) {
