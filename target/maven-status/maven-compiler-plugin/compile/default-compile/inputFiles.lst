@@ -3,7 +3,6 @@
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/interfaces/ILocationPicker.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/model/Location.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/model/LatLng.java
-/Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/locations/LocationMerger.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/locations/LocationPicker.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/exceptions/WishListDoesNotExistException.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/model/GlobalLatLngDetails.java
@@ -16,10 +15,11 @@
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/locations/LocationBrowserByCountry.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/locations/LocationBrowserFactory.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/utils/CSVFileReader.java
+/Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/exceptions/LocationNotExistException.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/model/DynamoDBWrapper.java
+/Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/exceptions/UserDoesNotExistException.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/locations/LocationBrowserByDistance.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/interfaces/IWishListManager.java
-/Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/exceptions/LocationsNotExistException.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/utils/Utils.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/wishlist/WishListImpl.java
 /Users/yaminia/TravelWishlist/src/main/java/techexe/expedia/interfaces/ILocationBrowser.java

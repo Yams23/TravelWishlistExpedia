@@ -2,6 +2,9 @@ package techexe.expedia.model;
 
 import com.amazonaws.services.dynamodbv2.datamodeling.*;
 
+import java.util.List;
+import java.util.Set;
+
 /**
  * Location contains details related to  locations added by user to their wishlist.
  * It maps to corresponding DynamoDB table
@@ -16,8 +19,6 @@ public class Location {
     private String locationName;
     @DynamoDBAttribute(attributeName = "description")
     private String description;
-
-
     @DynamoDBHashKey(attributeName = "latitude")
     private double latitude;
     @DynamoDBRangeKey(attributeName = "longitude")

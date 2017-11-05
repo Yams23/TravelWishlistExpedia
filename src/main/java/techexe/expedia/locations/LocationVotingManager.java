@@ -9,6 +9,7 @@ import techexe.expedia.model.LatLng;
 import techexe.expedia.model.Location;
 import techexe.expedia.model.UserDetails;
 
+import java.util.*;
 import java.util.logging.Logger;
 
 /**
@@ -22,41 +23,44 @@ public class LocationVotingManager implements ILocationVotingManager {
     /**
      * Instantiates a new Location voting manager.
      */
-    public LocationVotingManager(){
-        this.dynamoDBWrapper=new DynamoDBWrapper();
+    public LocationVotingManager() {
+        this.dynamoDBWrapper = new DynamoDBWrapper();
     }
 
     /**
      * Vote for given location by the given userId
      * Mark location as popular if the nofVotes > 5
+     *
      * @param locationAttributes the location attributes
      * @param userId             the user id
      * @throws LocationNotExistException
      * @throws UserDoesNotExistException
      */
     @Override
-    public void voteForLocation(LatLng locationAttributes,String userId) throws LocationNotExistException, UserDoesNotExistException {
-        logger.info("Vote for location with attributes "+locationAttributes.toString());
+    public void voteForLocation(LatLng locationAttributes, String userId) throws LocationNotExistException, UserDoesNotExistException {
+        logger.info("Vote for location with attributes " + locationAttributes.toString());
         Location location = dynamoDBWrapper.getLocationByLatLng(locationAttributes);
-        if(location == null){
-            logger.severe("There is no location corresponding to "+ locationAttributes.toString());
+        if (location == null) {
+            logger.severe("There is no location corresponding to " + locationAttributes.toString());
             throw new LocationNotExistException("Location does not exist");
 
         }
         int noOfVotes = location.getNoOfVotes();
         UserDetails user = dynamoDBWrapper.getUserById(userId);
 
-        if(user == null){
-            logger.severe("There is no user corresponding to "+ userId.toString());
+        if (user == null) {
+            logger.severe("There is no user corresponding to " + userId.toString());
             throw new UserDoesNotExistException("User does not exist");
         }
 
-        if(!user.isVoted() && (noOfVotes + 1) > 5){
+        if (!user.isVoted() && (noOfVotes + 1) > 5) {
             logger.info("Setting location to popular since the no of votes is greater than 5");
             location.setPopular(true);
         }
-        location.setNoOfVotes(noOfVotes+1);
-        location.setVotedBy(user.getEmailId());
+        location.setNoOfVotes(noOfVotes + 1);
+        String emailIds = location.getVotedBy() != null ? location.getVotedBy() : new String();
+        emailIds.concat("," + user.getEmailId());
+        location.setVotedBy(emailIds);
         dynamoDBWrapper.getMapper().save(location);
     }
 }

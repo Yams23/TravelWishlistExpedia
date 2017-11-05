@@ -3,9 +3,7 @@ package techexe.expedia.notifier;
 import techexe.expedia.model.DynamoDBWrapper;
 import techexe.expedia.model.Location;
 
-import java.util.LinkedList;
-import java.util.List;
-import java.util.Properties;
+import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 import javax.mail.*;
@@ -55,15 +53,16 @@ public class EmailNotifier {
         List<Location> locations = dynamoDBWrapper.getListOfLocations();
         // Get Popular locations
         List<Location> popularLocations = locations.stream().filter(loc -> loc.isPopular()).collect(Collectors.toList());
-        List<String> emailIds = new LinkedList<>();
-
-        //Get list of users who have voted for popular locations
-        emailIds = popularLocations.stream().map(Location::getVotedBy).collect(Collectors.toList());
-        return emailIds;
+        List<String> emailIdList = new ArrayList<>();
+        for(Location loc : popularLocations){
+            String emailIds=loc.getVotedBy();
+            emailIdList.addAll(Arrays.asList(emailIds.split(",")));
+        }
+        return emailIdList;
     }
 
     /**
-     * Send Email
+     * Send Email to dummy
      * @param emailId
      */
     private void sendEmail(String emailId) {

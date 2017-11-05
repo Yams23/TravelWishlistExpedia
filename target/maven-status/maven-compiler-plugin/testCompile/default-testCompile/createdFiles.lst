@@ -1,0 +1,7 @@
+dynamoDB/TestDynamoDbClient.class
+locationbrowser/TestLocationBrowser.class
+utils/TestUtils.class
+locationbrowser/TestLocationPicker.class
+locationbrowser/TestVotingManager.class
+wishlist/TestWishListMgr.class
+TestEmailNotifier.class
