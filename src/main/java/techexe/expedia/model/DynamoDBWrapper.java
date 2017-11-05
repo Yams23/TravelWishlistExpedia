@@ -98,6 +98,24 @@ public class DynamoDBWrapper {
         return location;
     }
 
+    /**
+     * Gets Global location by latitude &  longitude.
+     *
+     * @param attributes latitude & longitude
+     * @return the location by latlng
+     */
+    public GlobalLatLngDetails getGlobalLocationByLatLng(LatLng attributes) {
+        logger.info("Fetch location details by latitude and longitude");
+
+        GlobalLatLngDetails location = mapper.load(GlobalLatLngDetails.class, attributes.getLatitude(), attributes.getLongitude());
+        if (location == null) {
+            logger.severe("Location not found for the given latitude and longitude " + attributes.toString());
+            return location;
+        }
+        logger.info("Location details - " + location.toString());
+        return location;
+    }
+
 
     /**
      * Gets user by id.

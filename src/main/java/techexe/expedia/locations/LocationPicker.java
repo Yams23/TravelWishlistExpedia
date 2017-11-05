@@ -4,7 +4,6 @@ import techexe.expedia.interfaces.ILocationPicker;
 import techexe.expedia.model.DynamoDBWrapper;
 import techexe.expedia.model.GlobalLatLngDetails;
 import techexe.expedia.model.LatLng;
-import techexe.expedia.model.Location;
 
 import java.util.List;
 import java.util.logging.Logger;
@@ -41,10 +40,10 @@ public class LocationPicker implements ILocationPicker {
     /**
      * Given the latitude and longitude details,return the location details
      * @param attributes
-     * @return location
+     * @return global location
      */
     @Override
-    public Location pinPoint(LatLng attributes) {
-        return dynamoDBWrapper.getLocationByLatLng(attributes);
+    public GlobalLatLngDetails pinPoint(LatLng attributes) {
+        return dynamoDBWrapper.getGlobalLocationByLatLng(attributes);
     }
 }

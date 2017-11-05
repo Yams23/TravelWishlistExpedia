@@ -14,7 +14,7 @@ public class TestLocationBrowser {
 
     public ILocationBrowser browser;
     public LocationBrowserFactory factory = new LocationBrowserFactory();
-    
+
     @Test(description = "Verify List of locations by most popular country")
     public void testListOfLocsByCountry() throws LocationsNotExistException {
         browser = factory.getLocationBrowser(LocationBrowserFactory.BrowserType.COUNTRY);
