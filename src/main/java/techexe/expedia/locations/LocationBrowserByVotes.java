@@ -17,7 +17,7 @@ public class LocationBrowserByVotes  implements ILocationBrowser{
     }
     public List<Location> getListOfLocations() {
         List<Location> locations = dbWrapper.getListOfLocations();
-        Collections.sort(locations,new VotesComparator());
+        Collections.sort(locations,new LocationVotesComparator());
         return locations;
 
     }
