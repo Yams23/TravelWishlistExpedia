@@ -1,5 +1,6 @@
 package techexe.expedia.interfaces;
 
+import techexe.expedia.exceptions.WishListDoesNotExistException;
 import techexe.expedia.model.Location;
 import techexe.expedia.model.WishList;
 
@@ -28,7 +29,7 @@ public interface IWishListManager {
      * @param wishListId the wish list id
      * @return the wish list
      */
-    public WishList addToWishList(Location location, String userId, String wishListId);
+    public WishList addToWishList(Location location, String userId, String wishListId) throws WishListDoesNotExistException;
 
     /**
      * Delete wish list.

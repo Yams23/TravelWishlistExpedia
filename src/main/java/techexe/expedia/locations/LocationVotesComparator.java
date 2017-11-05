@@ -3,8 +3,9 @@ package techexe.expedia.locations;
 import techexe.expedia.model.Location;
 
 import java.util.Comparator;
+import java.util.Map;
 
-class VotesComparator implements Comparator<Location> {
+class LocationVotesComparator implements Comparator<Location> {
 
 
     public int compare(Location o1, Location o2) {
@@ -16,5 +17,7 @@ class VotesComparator implements Comparator<Location> {
             return 0;
         }
     }
+
+
 }
 

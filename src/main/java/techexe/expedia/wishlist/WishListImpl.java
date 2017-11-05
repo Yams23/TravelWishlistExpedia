@@ -1,5 +1,6 @@
 package techexe.expedia.wishlist;
 
+import techexe.expedia.exceptions.WishListDoesNotExistException;
 import techexe.expedia.interfaces.IWishListManager;
 import techexe.expedia.model.DynamoDBWrapper;
 import techexe.expedia.model.Location;
@@ -33,8 +34,12 @@ public class WishListImpl implements IWishListManager {
     }
 
     @Override
-    public WishList addToWishList(Location newLocation, String userId, String wishListId) {
+    public WishList addToWishList(Location newLocation, String userId, String wishListId) throws WishListDoesNotExistException {
         WishList wishList = dynamoDBWrapper.getWishList(userId, wishListId);
+        if(wishList == null){
+            logger.severe("Wishlist for id "+wishListId+"does not exist");
+            throw new WishListDoesNotExistException("Wishlist for id "+wishListId+"does not exist");
+        }
         List<String> locationIds = wishList.getLocationIds();
         if (locationIds == null) {
             locationIds = new ArrayList<>();

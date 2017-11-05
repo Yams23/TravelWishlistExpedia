@@ -31,9 +31,8 @@ public class TestDynamoDbClient {
     @Test
     public void testLocationDetailsPersistance() {
         DynamoDBMapper mapper = DynamoDBClient.getInstance().getDynamoDBMapper();
-        for (int i = 0; i < 10; i++) {
-            mapper.save(TestUtils.getLocation());
-        }
+        mapper.save(TestUtils.getLocation("US",7,7.1450674,9.450674));
+
     }
 
     @Test

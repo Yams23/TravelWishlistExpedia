@@ -71,8 +71,13 @@ public class DynamoDBWrapper {
      * @return the wish list
      */
     public List<WishList> getWishList(String userId) {
-        // mapper.
-        return null;
+        Map<String, AttributeValue> eav = new HashMap<String, AttributeValue>();
+        eav.put(":val1", new AttributeValue().withS(userId));
+
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
+        scanExpression.withFilterExpression("userId = :val1").withExpressionAttributeValues(eav);
+        List<WishList> wishList=mapper.scan(WishList.class,scanExpression);
+        return wishList;
     }
 
     /**
@@ -110,5 +115,10 @@ public class DynamoDBWrapper {
         return user;
     }
 
+    @Test
+    public void testdf(){
+        List<WishList> wl=getWishList("sdfs");
+        System.out.print(wl.size());
+    }
 
 }

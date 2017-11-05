@@ -19,15 +19,27 @@ public class TestUtils {
         return user;
     }
 
-    public static Location getLocation() {
+    public static Location getLocation(String countryName,int noOfVotes,double lat,double lng) {
         Location loc = new Location();
-        loc.setCountry("Africa");
-        loc.setDescription("Test description");
+        loc.setCountry(countryName);
+        loc.setDescription(" Test Location - "+Utils.getRandomString(3));
         loc.setLocationId(Utils.getUniqueId());
         loc.setVotedBy(Utils.getRandonEmailId());
-        loc.setNoOfVotes(Utils.getRandomNo(10));
-        loc.setLatitude(40.982326);
-        loc.setLongitude(-71.637078);
+        loc.setNoOfVotes(noOfVotes);
+        loc.setLatitude(lat);
+        loc.setLongitude(lng);
+        return loc;
+    }
+
+    public static Location getLocation() {
+        Location loc = new Location();
+        loc.setCountry("Australia");
+        loc.setDescription(" Test Location - "+Utils.getRandomString(3));
+        loc.setLocationId(Utils.getUniqueId());
+        loc.setVotedBy(Utils.getRandonEmailId());
+        loc.setNoOfVotes(4);
+        loc.setLatitude(17.998531);
+        loc.setLongitude(-66.85477);
         return loc;
     }
 

@@ -4,23 +4,29 @@ import techexe.expedia.interfaces.ILocationBrowser;
 
 public class LocationBrowserFactory {
 
+    public enum BrowserType {VOTES, DISTANCE, COUNTRY};
+
     public ILocationBrowser locationBrowser;
 
 
-    public ILocationBrowser getLocationBrowser(String type) {
-        switch (type){
-            case "Votes":{
+    public ILocationBrowser getLocationBrowser(BrowserType type) {
+        switch (type) {
+            case VOTES: {
                 locationBrowser = new LocationBrowserByVotes();
                 break;
             }
-            case "Distance":{
+            case DISTANCE: {
+                locationBrowser = new LocationBrowserByDistance();
+                break;
 
             }
-            case "Country":{
-
+            case COUNTRY: {
+                locationBrowser = new LocationBrowserByCountry();
+                break;
             }
-            default:{
-
+            default: {
+                locationBrowser = new LocationBrowserByVotes();
+                break;
             }
 
 
