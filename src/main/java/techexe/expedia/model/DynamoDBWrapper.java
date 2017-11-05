@@ -115,10 +115,20 @@ public class DynamoDBWrapper {
         return user;
     }
 
-    @Test
-    public void testdf(){
-        List<WishList> wl=getWishList("sdfs");
-        System.out.print(wl.size());
+    /**
+     * Gets list of all locations from Global Data Set.
+     * GlobalLatLng Table has been populated with static set of latitude & longitudes
+     * @return the list of wish list locations
+     */
+    public List<GlobalLatLngDetails> getListOfGlobalLocations() {
+        logger.info("Fetching all the locations tagged by users");
+        DynamoDBScanExpression scanExpression = new DynamoDBScanExpression();
+        List<GlobalLatLngDetails> locations = mapper.scan(GlobalLatLngDetails.class, scanExpression);
+        if (locations == null || locations.isEmpty()) {
+            logger.info("There are no locations in the DynamoDB Store");
+        }
+        return locations;
     }
+
 
 }

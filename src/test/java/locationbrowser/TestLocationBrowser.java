@@ -22,13 +22,13 @@ public class TestLocationBrowser {
     public void testListOfLocsByCountry() throws LocationsNotExistException {
         browser = factory.getLocationBrowser(LocationBrowserFactory.BrowserType.COUNTRY);
         List<Location> locsByCountry = browser.getListOfLocations();
-        Assert.assertNotNull(locsByCountry, "Llist of locations shoould not be null");
+        Assert.assertNotNull(locsByCountry, "List of locations shoould not be null");
     }
 
     @Test(description = "Verify List of locations by most no of vote")
     public void testListOfLocsByVotes() throws LocationsNotExistException {
         browser = factory.getLocationBrowser(LocationBrowserFactory.BrowserType.VOTES);
         List<Location> locsByCountry = browser.getListOfLocations();
-        Assert.assertNotNull(locsByCountry, "Llist of locations shoould not be null");
+        Assert.assertNotNull(locsByCountry, "List of locations shoould not be null");
     }
 }
