@@ -9,7 +9,13 @@ import java.util.*;
 import java.util.logging.Logger;
 import java.util.stream.Collectors;
 
+/**
+ * Location browser lists locations by most popular country.
+ * Country with maximum number votes will be considered most popular.
+ *
+ */
 public class LocationBrowserByCountry implements ILocationBrowser {
+
     Logger logger = Logger.getLogger(LocationBrowserByCountry.class.getName());
 
     private DynamoDBWrapper dbWrapper;
@@ -17,6 +23,9 @@ public class LocationBrowserByCountry implements ILocationBrowser {
     private List<Location> locations;
 
 
+    /**
+     * Instantiates a  Location browser by country.
+     */
     public LocationBrowserByCountry() {
 
         this.dbWrapper = new DynamoDBWrapper();
@@ -24,6 +33,14 @@ public class LocationBrowserByCountry implements ILocationBrowser {
 
     }
 
+    /**
+     * Get List of locations by most popular country
+     * 1.Fetches list of countries and their votes
+     * 2.Sorts the countries by votes.
+     * 3.Fetches the location details in sorted order
+     * @return List of popular locations by country
+     * @throws LocationsNotExistException
+     */
     public List<Location> getListOfLocations() throws LocationsNotExistException {
         logger.info("Fetching list of locations by most popular country");
         Map<String, Integer> countryByVotesSorted = getCountryByVotes();
@@ -36,6 +53,11 @@ public class LocationBrowserByCountry implements ILocationBrowser {
         return locationByPopularCountry;
     }
 
+    /**
+     * Get List of countries and their votes in sorted order
+     * @return Map of countries and their votes in sorted order
+     * @throws LocationsNotExistException
+     */
     private Map<String, Integer> getCountryByVotes() throws LocationsNotExistException {
         logger.info("Fetching list of countries and their respective no of votes");
 
@@ -62,17 +84,22 @@ public class LocationBrowserByCountry implements ILocationBrowser {
             }
             countryByVotes.put(country, noOfVotes);
         }
-        logger.info("Country Map by votes " + countryList.toString());
+        logger.info("Country Map by votes " + countryByVotes.toString());
 
         Map<String, Integer> sortedCountryMap = countryByVotes.entrySet().stream()
                 .sorted(Map.Entry.comparingByValue(Comparator.reverseOrder()))
                 .collect(Collectors.toMap(Map.Entry::getKey, Map.Entry::getValue,
                         (oldValue, newValue) -> oldValue, LinkedHashMap::new));
-        logger.info("Sorted Country Map by votes " + countryList.toString());
+
+        logger.info("Sorted Country Map by votes " + sortedCountryMap.toString());
         return sortedCountryMap;
     }
 
-
+    /**
+     * Get the location details given the country name
+     * @param country
+     * @return location
+     */
     private Location getLocationByCountry(String country) {
         if (locations == null || locations.isEmpty()) {
             logger.severe("Locations Data is empty or null.There is data present in DynamoDB");
