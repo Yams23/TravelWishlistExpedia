@@ -20,11 +20,9 @@ LocationVotingManager
     This module exposes API to vote for particular location given the latitude and longitude details and userId. It increments the count for particular location in the database and if the count is greater than five, it marks the place as popular.
 
 Notifier
-    The notification system fetches the list of locations from the DynamoDB store and queries the list of locations which are popular and corresponding user email Ids who have voted for that locations. Email is being sent to all those emails using Java Messaging system.
+        The notification system fetches the list of locations from the DynamoDB store and queries the list of locations which are popular and corresponding user email Ids who have voted for that locations. Email is being sent to all those emails using Java Messaging system.
 
 DynamoDB
 
-    This data store handles the data model for this framework. It stores data related to User Details, WishList details, Location details and Global Latitude and Longitude details. DynamoDB Wrapper has been created on top of DynamoDB Java client which exposes APIs to fetch the above-mentioned data objects programmatically.
-
-    The DynamoDB tables can also be managed via AWS console. The following snapshot shows list of tables created
+    This data store handles the data model for this framework. It stores data related to User Details, WishList details, Location details and Global Latitude and Longitude details. DynamoDB Wrapper has been created on top of DynamoDB Java client which exposes APIs to fetch the above-mentioned data objects programmatically.The DynamoDB tables can also be managed via AWS console. 
 
